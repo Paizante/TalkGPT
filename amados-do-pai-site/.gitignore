@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+
+# next.js build output
+.next/
+out/
+
+# reference materials (not part of the public site)
+.references/
+
+# env files
+.env
+.env.local
+.env*.local
+
+# testing / validation artifacts
+artifacts/
+test-results/
+playwright-report/
+
+# misc
+.DS_Store
+*.log
+next-env.d.ts
+*.tsbuildinfo
