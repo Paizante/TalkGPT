@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-evergreen: #1f3d34;
+  --color-deep-green: #132f29;
+  --color-mid-green: #385d50;
+  --color-soft-green: #a8bcae;
+  --color-beige: #e7dcc6;
+  --color-ivory: #faf7f1;
+  --color-bronze: #c9a276;
+  --color-terracotta: #c56a4d;
+  --color-graphite: #29312f;
+  --color-warm-gray: #777873;
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+
+  color-scheme: light;
+}
+
+* {
+  scrollbar-gutter: stable;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: var(--color-ivory);
+  color: var(--color-graphite);
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3.5rem;
+  z-index: 100;
+  background: var(--color-ivory);
+  color: var(--color-evergreen);
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-terracotta);
+  outline-offset: 2px;
+}
+
+.reveal-path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw-path 1.2s ease forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes draw-path {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
