@@ -23,3 +23,7 @@ playwright-report/
 *.log
 next-env.d.ts
 *.tsbuildinfo
+
+# the repo root .gitignore has a generic "lib/" rule (Python template) that
+# would otherwise exclude this project's src/lib — un-ignore it here.
+!/src/lib/
